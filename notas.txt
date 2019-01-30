@@ -1,4 +1,0 @@
-https://yarnpkg.com/en/docs/install#windows-stable
-
-create-react-app confusion
-
