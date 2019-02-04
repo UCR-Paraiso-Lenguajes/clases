@@ -1,0 +1,8 @@
+https://yarnpkg.com/en/docs/install#windows-stable
+create-react-app confusion
+
+yarn add bootstrap@4.0.0
+yarn add reactstrap@5.0.0 react-popper@0.9.2
+
+https://getbootstrap.com/docs/4.0/layout/media-object/#media-list
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map
