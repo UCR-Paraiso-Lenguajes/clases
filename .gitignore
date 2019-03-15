@@ -14,3 +14,4 @@ java1/app/target/maven-status/maven-compiler-plugin/compile/default-compile/crea
 java1/app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 java1/app/target/test-classes/cr/ac/ucr/ie/app/AppTest.class
 java1/app/target/classes/cr/ac/ucr/ie/app/controllers/HolaController.class
+*.class
