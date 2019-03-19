@@ -37,6 +37,38 @@ public class Empleado
 			return false;
 		return true;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) 
+	{
+		if(id <= 0) throw new RuntimeException("El id debe ser mayor a 0.");
+		this.id = id;
+	}
+
+	public String getNombre()
+	{
+		return nombre;
+	}
+
+	public void setNombre(String nombre) 
+	{
+		if(nombre != null && nombre.trim().equals("")) throw new RuntimeException("El nombre es requerido");
+		this.nombre = nombre;
+	}
+
+	public String getApellidos() 
+	{
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos)
+	{
+		if(apellidos != null && apellidos.trim().equals("")) throw new RuntimeException("El apellidos es requerido");	
+		this.apellidos = apellidos;
+	}
 	
 	
 	
