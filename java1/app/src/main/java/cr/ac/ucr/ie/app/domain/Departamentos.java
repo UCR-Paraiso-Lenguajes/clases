@@ -18,4 +18,14 @@ public class Departamentos
 	{
 		return departamentos.iterator();		
 	}
+
+	public Departamento BuscarXId(int departamento) 
+	{
+		for(Departamento depto:departamentos)
+		{
+			if(depto.getCod() == departamento) return depto;
+			
+		}
+		throw new RuntimeException("El departamento "+departamento+" no existe.");
+	}
 }

@@ -73,6 +73,15 @@ public class Empleado
 		if(apellidos != null && apellidos.trim().equals("")) throw new RuntimeException("El apellidos es requerido");	
 		this.apellidos = apellidos;
 	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		if(departamento == null) throw new RuntimeException("El departamento es requerido");
+		this.departamento = departamento;
+	}
 	
 	
 	
