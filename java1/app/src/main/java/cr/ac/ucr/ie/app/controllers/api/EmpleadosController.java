@@ -14,7 +14,7 @@ public class EmpleadosController
 {
 	private Departamento dep = new Departamento(1, "Lenguajes");
 	
-	@RequestMapping("/")
+	@RequestMapping("/empleados")
 	public @ResponseBody List<Empleado> listar() 
 	{
 		return dep.listarEmpleados();

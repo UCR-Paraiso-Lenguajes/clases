@@ -1,14 +1,21 @@
 package cr.ac.ucr.ie.app.controllers.pages;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cr.ac.ucr.ie.app.domain.Departamento;
+
 @Controller
-public class HomeController {
+public class HomeController 
+{
  
-	@RequestMapping("/mensaje")
-	public String mensaje() 
+	private Departamento dep = new Departamento(1, "Lenguajes");
+	@RequestMapping("/")
+	public String mensaje(ModelMap model) 
 	{
-		return "mensaje";
+		model.addAttribute("empleados", dep.listarEmpleados());
+		
+		return "empleados";
 	}
 }
