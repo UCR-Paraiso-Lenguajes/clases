@@ -5,20 +5,24 @@ public class Empleado
 	private int id;
 	private String nombre;
 	private String apellidos;
+	private Departamento departamento;
 	
-	public Empleado(int id, String nombre, String apellidos)
+	public Empleado(int id, String nombre, String apellidos, Departamento departamento)
 	{
-		this(id, nombre);
+		this(id, nombre,departamento);
 		if(apellidos != null && apellidos.trim().equals("")) throw new RuntimeException("El apellidos es requerido");		
 
 		this.apellidos = apellidos;
+		this.departamento = departamento;
 	}
 	
-	public Empleado(int id, String nombre)
+	public Empleado(int id, String nombre, Departamento departamento)
 	{
 		if(id <= 0) throw new RuntimeException("El id debe ser mayor a 0.");
-		if(nombre != null && nombre.trim().equals("")) throw new RuntimeException("El nombre es requerido");
+		if(nombre == null || nombre.trim().equals("")) throw new RuntimeException("El nombre es requerido");
+		if(departamento == null) throw new RuntimeException("El departamento es requerido");
 		
+		this.departamento=departamento;
 		this.id = id;
 		this.nombre = nombre;
 	}

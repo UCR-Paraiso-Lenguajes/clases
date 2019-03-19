@@ -1,7 +1,6 @@
 package cr.ac.ucr.ie.app.domain;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Empleados {
 
@@ -9,10 +8,12 @@ public class Empleados {
 	
 	public Empleados ()
 	{
-		Agregar(new Empleado(1, "Cristian"));
-		Agregar(new Empleado(2, "Dave"));
-		Agregar(new Empleado(3, "Cristian"));
-		Agregar(new Empleado(4, "Carlos"));
+		Departamento finanziero = new Departamento(1, "Financiero");
+		
+		Agregar(new Empleado(1, "Cristian",finanziero));
+		Agregar(new Empleado(2, "Dave" ,finanziero));
+		Agregar(new Empleado(3, "Cristian",finanziero));
+		Agregar(new Empleado(4, "Carlos",finanziero));
 	}
 
 	public void Agregar(Empleado empleado)
@@ -21,7 +22,7 @@ public class Empleados {
 		empleados.add(empleado);
 	}
 
-	public List<Empleado> listar()
+	public Iterable<Empleado> listar()
 	{
 		return empleados;
 	}
