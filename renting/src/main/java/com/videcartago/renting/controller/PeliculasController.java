@@ -27,7 +27,7 @@ public class PeliculasController {
 	
 	
 	@RequestMapping(value="/peliculas", method=RequestMethod.GET )
-	public @ResponseBody List<Pelicula> datos(Model model) {
+	public @ResponseBody List<Pelicula> PeliculaConMayorDuraciónEnMinutosEntreDosPeliculas(Model model) {
 		return peliculaBusiness.findAllMoviesByTitleAndGenre("the", "suspenso");
 	}	
 }

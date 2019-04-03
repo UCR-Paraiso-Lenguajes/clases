@@ -15,3 +15,8 @@ java1/app/target/maven-status/maven-compiler-plugin/compile/default-compile/inpu
 java1/app/target/test-classes/cr/ac/ucr/ie/app/AppTest.class
 java1/app/target/classes/cr/ac/ucr/ie/app/controllers/HolaController.class
 *.class
+renting/.mvn/wrapper/maven-wrapper.jar
+renting/.mvn/wrapper/maven-wrapper.properties
+renting/.mvn/wrapper/MavenWrapperDownloader.java
+renting/mvnw
+renting/mvnw.cmd
