@@ -1,5 +1,6 @@
 package com.videcartago.renting.domain;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class Pelicula {
 	
 	public Pelicula() {
 		genero = new Genero();
-		actores = new LinkedList<>();
+		actores = new ArrayList<Actor>();
 	}
 	
 	public Genero getGenero() {
