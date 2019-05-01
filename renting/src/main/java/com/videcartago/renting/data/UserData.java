@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.UncategorizedSQLException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
@@ -28,7 +29,14 @@ public class UserData
 				+ "  left join user_role ur on us.id = ur.user_id"
 				+ "  left join role1 role on ur.role_id = role.role_id"
 				+ " WHERE us.email = '"+email.trim() + "' ";
-		return jdbcTemplate.query(sqlSelect, new UsesWithRoleExtractor());
+		try 
+		{
+			return jdbcTemplate.query(sqlSelect, new UsesWithRoleExtractor());
+		}
+		catch (UncategorizedSQLException e) 
+		{
+			return null;
+		}
 	}
 }
 
@@ -36,7 +44,9 @@ public class UserData
 class UsesWithRoleExtractor implements ResultSetExtractor<User> {
 	@Override
 	public User extractData(ResultSet rs) throws SQLException, DataAccessException {
-
+		
+		if(rs == null) return null; 
+			
 		User user = null;
 		
 		rs.next();

@@ -25,11 +25,28 @@ public class User
 		this.roles = roles;
 	}
 
-	public String getName() {
+	public String getName() 
+	{
 		return name;
 	}
 
+	public int getId() {
+		return id;
+	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public ArrayList<Role> getRoles() {
+		return roles;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+	
+	
 	
 	
 	
