@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>adminHome</title>
+
+</head>
+<body>
+<div sec:authorize="hasRole('ROLE_ADMIN1')">Only admin</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.videcartago.renting.business;
+package com.videcartago.renting.security;
 
 import java.util.Collection;
 
@@ -8,6 +8,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +34,9 @@ public class CustomUserDetailService implements UserDetailsService
 		if(user == null) throw new UsernameNotFoundException("El usuario no existe");
 		
 		Collection<? extends GrantedAuthority> roles =getAuthorities(user);
+		
+		//BCryptPasswordEncoder bcrytp = new BCryptPasswordEncoder();
+		//String test = bcrytp.encode("123");
 		
 		return new org.springframework.security.core.userdetails.User(
 				user.getEmail(), 
