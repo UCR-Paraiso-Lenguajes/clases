@@ -25,7 +25,7 @@ public class GeneroData
 	public List<Genero> findAllGenres(int inicio, int fin)
 	{
 		List<Genero> generos = new ArrayList<Genero>();
-		/*String selectSql = 
+		String selectSql = 
 			"SELECT cod_genero, nombre_genero FROM Genero g where cod_genero > ? AND cod_genero < ? order by cod_genero ASC";
 				jdbcTemplate.query(
 						selectSql, 
@@ -35,7 +35,7 @@ public class GeneroData
 							)
 						.forEach(entry -> generos.add(entry)
 				);
-				*/
+				
 		return generos;
 	}
 }

@@ -32,15 +32,9 @@ public class PeliculasController {
 	@RequestMapping(value="/findMovies", method=RequestMethod.GET )
 	public String findMovies(Model model) {
 		//TODO capturar los parámetros remitidos desde la vista
-		model.addAttribute("peliculas", peliculaBusiness.findAllMoviesByTitleAndGenre("the", "suspenso"));
+		model.addAttribute("peliculas", peliculaBusiness.findAllMoviesByTitleAndGender("the", "suspenso"));
 		return "findMovies";
 	}
-	
-	
-	@RequestMapping(value="/peliculas", method=RequestMethod.GET )
-	public @ResponseBody List<Pelicula> PeliculaConMayorDuraciónEnMinutosEntreDosPeliculas(Model model) {
-		return peliculaBusiness.findAllMoviesByTitleAndGenre("the", "suspenso");
-	}	
 	
 	@RequestMapping(value="/insertarPelicula", method=RequestMethod.GET)
     public String init(PeliculaForm peliculaForm, Model model) 
@@ -68,7 +62,7 @@ public class PeliculasController {
 			pelicula.getGenero().setCodGenero(peliculaForm.getCodGenero());
 			peliculaBusiness.save(pelicula);
 			
-			model.addAttribute("peliculas", peliculaBusiness.findAllMoviesByTitleAndGenre("it", "suspenso"));
+			model.addAttribute("peliculas", peliculaBusiness.findAllMoviesByTitleAndGender("it", "suspenso"));
 			return "findMovies";
 		}
 	}

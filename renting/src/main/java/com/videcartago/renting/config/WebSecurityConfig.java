@@ -48,8 +48,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 			frameOptions().sameOrigin()
 				.and()
 			.authorizeRequests() 
-				.antMatchers("/insertarPelicula")/*.hasRole("ADMIN")*/.permitAll()
-				.antMatchers("/findMovies")/*.hasRole("INVENTORYMANAGER")*/.permitAll()
+				.antMatchers("/insertarPelicula").hasRole("ADMIN")
+				.antMatchers("/findMovies").hasRole("ADMIN")
+				.antMatchers("/api/**").permitAll()
+				.antMatchers("/insertarPelicula/*").hasRole("DUENNO") //Eejemplo de sobrecarga matchers.
 				.anyRequest().authenticated()
 				.and().
 			formLogin().loginPage("/login")

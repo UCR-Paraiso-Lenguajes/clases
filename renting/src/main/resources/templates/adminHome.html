@@ -6,6 +6,10 @@
 
 </head>
 <body>
-<div sec:authorize="hasRole('ROLE_ADMIN1')">Only admin</div>
+
+Welcome  <span sec:authentication="principal.username"> User</span>
+<div sec:authorize="hasRole('ADMIN')">Only admin</div>
+
+<a th:href="@{/logout}">Logout</a>
 </body>
 </html>

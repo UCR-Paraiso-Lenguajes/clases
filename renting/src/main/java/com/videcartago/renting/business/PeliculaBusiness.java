@@ -19,7 +19,7 @@ public class PeliculaBusiness
 	@Autowired
 	private GeneroData generoData;
 	
-	public List<Pelicula> findAllMoviesByTitleAndGenre(String title, String genre) {
+	public List<Pelicula> findAllMoviesByTitleAndGender(String title, String genre) {
 		return peliculaDao.findMoviesByTitleAndGenre(title, genre);
 	}
 	
@@ -30,8 +30,6 @@ public class PeliculaBusiness
 		if(pelicula.getTitulo().length() > 200 ) throw new RuntimeException("El nombre no puede tener más de 200 caracteres.");
 		if(pelicula.getGenero() == null ) throw new RuntimeException("El genero es requerido.");
 			
-		peliculaDao.save(pelicula);
-		
 		return peliculaDao.save(pelicula);
 	}
 
