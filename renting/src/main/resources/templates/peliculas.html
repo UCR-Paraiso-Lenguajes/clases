@@ -25,19 +25,62 @@
 		</div>
 	</div>
 		<div class="row">
-		<div class="col-12"><button id="search">Search</button></div>
+			<div class="col-6"><button id="insert">Insert</button>
+			<div class="col-6"><button id="search">Search</button>
+		</div>
 	</div>
-	<div id="result" style="display: none; background-color: blue; color:white;">Resultado del Ajax</div>
+	<div id="result" style="display: none;"></div>
+	
+	<div id="format" style="display: none;">
+		<div class="row">
+			<div id="movieId" class="col-6"></div>
+			<div id="movieTittle"  class="col-6"></div>
+		</div>
+	</div>
 </div>
 <script>
+var insertbtn = $("#insert");
 var title = $("#title");
 var gender = $("#gender");
 var resultado = $("#result");
+var format = $("#format");
+var obj =     {
+        "titulo": "Home Comming",
+        "totalPeliculas": 200,
+        "subtitulada": true,
+        "estreno": true,
+        "genero": {
+            "codGenero": 1000,
+            "nombreGenero": "Suspenso3"
+        },
+        "actores": []
+    };
+$("#insert").click(function(){
+	
+	obj.titulo=title.val();
+	
+	$.ajax(	{
+		method:"POST",
+		data:JSON.stringify( obj),
+		contentType:"application/json; charset=utf-8",
+		dataType:"json",
+		url: "api/pelicula"
+	}).done(function( data ) {
+		alert("Exito");
+	});
+});
 $("#search").click(function(){
 	$.ajax(	{
 		url: "api/peliculas?title="+title.val()+"&gender="+gender.val()
 	}).done(function( data ) {
-		resultado.html(""+data[0]);
+		for(var i =0; i< data.length; i++)
+		{
+			var clone = format.clone();
+			var movie = data[i];
+			clone.find("#movieId").html(movie.codPelicula);
+			clone.find("#movieTittle").html(movie.titulo);
+			resultado.append( clone.html() );
+		}		
 		resultado.show("slow");
 	});
 });
