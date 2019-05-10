@@ -44,7 +44,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 	@Override
 	protected void  configure(HttpSecurity http) throws Exception
 	{
-		http.headers().
+		http.
+		csrf().disable()
+		.headers().
 			frameOptions().sameOrigin()
 				.and()
 			.authorizeRequests() 
@@ -52,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 				.antMatchers("/findMovies").hasRole("ADMIN")
 				.antMatchers("/api/**").permitAll()
 				.antMatchers("/insertarPelicula/*").hasRole("DUENNO") //Eejemplo de sobrecarga matchers.
-				.anyRequest().authenticated()
+				.anyRequest().permitAll()
 				.and().
 			formLogin().loginPage("/login")
 				.defaultSuccessUrl("/home")

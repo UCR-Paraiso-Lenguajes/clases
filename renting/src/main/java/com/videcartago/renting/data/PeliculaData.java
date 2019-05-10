@@ -77,6 +77,14 @@ public class PeliculaData
 		// TODO FALTA INSERTAR LOS ACTORES DE LA PELICULA
 		return pelicula;
 	}
+
+	public void update(int id, Pelicula pelicula) 
+	{
+		String sqlSelect = "UPDATE Pelicula SET titulo = '"+
+	pelicula.getTitulo()
+		+"' where cod_pelicula = "+id;
+		jdbcTemplate.batchUpdate(sqlSelect);
+	}
 }
 
 class PeliculasWithActoresExtractor implements ResultSetExtractor<List<Pelicula>> {

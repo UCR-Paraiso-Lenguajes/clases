@@ -66,5 +66,11 @@ public class PeliculasController {
 			return "findMovies";
 		}
 	}
+	
+	@RequestMapping(value = "/peliculas", method = RequestMethod.GET)
+	public String pantallaDEPeliculas() 
+	{
+		return "peliculas";
+	}
 }
 
