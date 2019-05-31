@@ -92,17 +92,3 @@
         </ul>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-<script>
-    $(".col-md-3").click(function () {
-        $.ajax({
-                url: "http://localhost:57390/api/peliculas",
-                success: function (result) {
-                    console.log(result[3].codPelicula);
-                    $("body").append("<div><a href=''>"+result[3].codPelicula+"</a></div>");
-                }});
-    });
-            
-</script>

@@ -1,6 +1,9 @@
+using core.Data;
 using core.Domain;
 using NUnit.Framework;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -9,6 +12,7 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]
@@ -18,6 +22,18 @@ namespace Tests
 
             Assert.AreEqual(1, g1.CodGenero);
             Assert.AreEqual("Test", g1.NombreGenero);
+        }
+
+        [Test]
+        public void Db()
+        {
+            //IEnumerable generos = new GeneroData().List();
+
+            //Assert.AreNotEqual(null, generos);
+
+            IEnumerable peliculas = new PeliculaData().List();
+
+            Assert.AreNotEqual(null, peliculas);
         }
 
         [Test]
