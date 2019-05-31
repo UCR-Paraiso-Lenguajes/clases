@@ -7,9 +7,6 @@ namespace core.Domain
 {
     public class Genero
     {
-        //public int CodGenero { get; private set; }
-        //public string NombreGenero { get; private set; }
-
         private int codGenero;
         public int CodGenero
         {

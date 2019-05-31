@@ -27,10 +27,6 @@ namespace Tests
         [Test]
         public void Db()
         {
-            //IEnumerable generos = new GeneroData().List();
-
-            //Assert.AreNotEqual(null, generos);
-
             IEnumerable peliculas = new PeliculaData().List();
 
             Assert.AreNotEqual(null, peliculas);
@@ -50,5 +46,20 @@ namespace Tests
             }
             
         }
+
+        [Test]
+        public void InsertPelicula()
+        {
+            int i = 0;
+            Pelicula p = new Pelicula(i, "Lord Of Rings", new Genero(1000, "suspenso3"), 3, true, true);
+            p.Actores.Add(new Actor(286, "fred"));
+            p.Actores.Add(new Actor(285, "George"));
+
+            new PeliculaData().Insert(p);
+
+            Assert.AreNotEqual(0, p.CodPelicula);
+   
+        }
+
     }
 }

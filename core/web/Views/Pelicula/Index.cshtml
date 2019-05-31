@@ -1,0 +1,17 @@
+﻿@model  IEnumerable<core.Domain.Pelicula>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Peliculas</h2>
+
+<div class="container">
+    <ul>
+        @foreach (var pelicula in Model)
+        {
+            <li>
+                @pelicula.Titulo
+            </li>
+        }
+        </ul>
+</div>
