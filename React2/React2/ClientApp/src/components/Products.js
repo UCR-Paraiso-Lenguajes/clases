@@ -9,7 +9,14 @@ export class Products extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { products: [], loading: true };
+      this.state = { products: [], loading: true };
+
+    fetch('api/SampleData/Products')
+        .then(response => response.json())
+        .then(data => {
+            this.setState({ products: data, loading: false });
+        });
+
     }
 
   render() {
@@ -19,21 +26,20 @@ export class Products extends Component {
                 <Row>
                     <Search />
                 </Row>
-                <Row>
-                    <Col sm={4}><Product title="Fijo 2019"/></Col>
-                    <Col sm={4}><Product title="Fijo 2018"/></Col>
-                    <Col sm={4}><Product title="Fijo 2017"/></Col>
-                </Row>
-                <Row>
-                    <Col sm={4}><Product title="Fijo 2016" /></Col>
-                    <Col sm={4}><Product title="Fijo 2015" /></Col>
-                    <Col sm={4}><Product title="Fijo 2014" /></Col>
-                </Row>
-                <Row>
-                    <Col sm={4}><Product title="Fijo 2013" /></Col>
-                    <Col sm={4}><Product title="Fijo 2012" /></Col>
-                    <Col sm={4}><Product title="Fijo 2011" /></Col>
-                </Row>
+                {this.state.products.map(product =>
+                    <Row>
+                        <Col sm={4}>
+                            <Product title={product.title} />
+                        </Col>
+                        <Col sm={4}>
+                            <Product title={product.title} />
+                        </Col>
+                        <Col sm={4}>
+                            <Product title={product.title} />
+                        </Col>
+                    </Row>
+                )}
+
             </Grid>
       </div>
     );
