@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    body {
+        padding-top: 50px;
+    }
+
+
+}
+
+.glyphicon {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.glyphicon-shopping-cart {
+    margin-right: 50px;
+}

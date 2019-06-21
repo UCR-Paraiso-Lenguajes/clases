@@ -120,3 +120,9 @@ core/coreTest/obj/Release/netcoreapp2.1/coreTest.csproj.CoreCompileInputs.cache
 /core/core/obj
 /core/web/obj
 /core/web/bin
+*.ide
+React2/.vs/React2/config/applicationhost.config
+React2/.vs/React2/DesignTimeBuild/.dtbcache
+React2/.vs/React2/v16/.suo
+React2/.vs/React2/v16/Server/sqlite3/storage.ide-shm
+React2/.vs/React2/v16/Server/sqlite3/storage.ide-wal
